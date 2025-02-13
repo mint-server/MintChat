@@ -1,8 +1,8 @@
 import type { Route } from "./+types/home";
 
-export function meta({}: Route.MetaArgs) {
+export function meta({ }: Route.MetaArgs) {
   return [
-    { title: "IRC Chat" },
+    { title: "MintChat" },
     { name: "description", content: "IRC chat system for instant messaging" },
   ];
 }
