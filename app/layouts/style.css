@@ -1,0 +1,7 @@
+.main-layout .separator {
+  border-left: 1px solid #eee;
+}
+
+.main-layout .panel {
+  padding: 12px;
+}
