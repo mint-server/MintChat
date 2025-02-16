@@ -3,7 +3,6 @@ const sx = {
     pt: '4px',
     display: 'flex',
     alignItems: 'center',
-    boxShadow: 'none',
     backgroundColor: '#f1f1f1'
   },
 

@@ -12,7 +12,7 @@ interface ISearchInput {
 
 const SearchInput = ({ textInputProps, iconButtonProps }: ISearchInput) => {
   return (
-    <Paper component="form" sx={sx.paperContainer}>
+    <Paper component="form" sx={sx.paperContainer} elevation={0}>
 
       <InputBase
         size="small"
