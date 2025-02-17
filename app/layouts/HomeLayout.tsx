@@ -6,13 +6,13 @@ import {
 } from "react-resizable-panels";
 import "./style.css";
 
-interface IMainLayout {
+interface IHomeLayout {
   leftSidebar: ReactNode,
   rightSidebar: ReactNode,
   children: ReactNode
 }
 
-const MainLayout = ({ leftSidebar, rightSidebar, children }: IMainLayout) => {
+const HomeLayout = ({ leftSidebar, rightSidebar, children }: IHomeLayout) => {
   return (
     <PanelGroup direction="horizontal" className="main-layout">
 
@@ -40,4 +40,4 @@ const MainLayout = ({ leftSidebar, rightSidebar, children }: IMainLayout) => {
   );
 }
 
-export default MainLayout;
+export default HomeLayout;
