@@ -6,7 +6,6 @@ import {
 } from "react-resizable-panels";
 import "./style.css";
 
-
 interface IMainLayout {
   leftSidebar: ReactNode,
   rightSidebar: ReactNode,
@@ -14,20 +13,29 @@ interface IMainLayout {
 }
 
 const MainLayout = ({ leftSidebar, rightSidebar, children }: IMainLayout) => {
-
   return (
     <PanelGroup direction="horizontal" className="main-layout">
-      <Panel defaultSize={15} className="panel">
-        {leftSidebar}
+
+      <Panel defaultSize={17} className="panel left-panel">
+        <div className="overflow-content">
+          {leftSidebar}
+        </div>
       </Panel>
+
       <PanelResizeHandle className="separator" />
       <Panel minSize={20} className="panel">
-        {children}
+        <div className="overflow-content">
+          {children}
+        </div>
       </Panel>
+
       <PanelResizeHandle className="separator" />
       <Panel defaultSize={15} className="panel">
-        {rightSidebar}
+        <div className="overflow-content">
+          {rightSidebar}
+        </div>
       </Panel>
+
     </PanelGroup>
   );
 }

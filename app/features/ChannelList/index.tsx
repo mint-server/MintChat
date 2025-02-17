@@ -1,6 +1,7 @@
 import { Stack } from '@mui/material';
 import ChannelTreeView from './ChannelTreeView';
 import SearchChannel from './SearchChannel';
+import sx from './styles';
 
 const ChannelList = () => {
   const networkList = [{
@@ -146,7 +147,7 @@ const ChannelList = () => {
   }];
 
   return (
-    <Stack spacing={2}>
+    <Stack spacing={2} sx={sx.container}>
       <SearchChannel />
       <ChannelTreeView data={networkList} />
     </Stack>

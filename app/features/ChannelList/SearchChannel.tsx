@@ -1,5 +1,6 @@
 import type { IconButtonProps, InputBaseProps } from "@mui/material";
 import SearchInput from "~/components/SearchInput/SearchChannel";
+import sx from "./styles";
 
 const SearchChannel = () => {
   const textInputProps: InputBaseProps = {
@@ -12,7 +13,7 @@ const SearchChannel = () => {
   }
 
   return (
-    <SearchInput textInputProps={textInputProps} iconButtonProps={iconButtonProps} />
+    <SearchInput textInputProps={textInputProps} iconButtonProps={iconButtonProps} sx={sx.channelSearchInput} />
   );
 }
 

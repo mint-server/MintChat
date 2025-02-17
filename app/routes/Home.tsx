@@ -1,6 +1,6 @@
-import ChannelSideBar from "~/features/ChannelList";
 import type { Route } from "./+types/Home";
 import MainLayout from "~/layouts/MainLayout";
+import ChannelSideBar from "~/features/ChannelList";
 
 export function meta({ }: Route.MetaArgs) {
   return [

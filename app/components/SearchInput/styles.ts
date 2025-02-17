@@ -1,13 +1,13 @@
 const sx = {
   paperContainer: {
-    pt: '4px',
+    pt: 0.5,
     display: 'flex',
     alignItems: 'center',
     backgroundColor: '#f1f1f1'
   },
 
   searchIcon: {
-    p: '4px'
+    p: 0.5
   },
 
   searchInput: {

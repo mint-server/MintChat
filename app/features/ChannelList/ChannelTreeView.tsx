@@ -3,6 +3,8 @@ import FolderOpenTwoToneIcon from '@mui/icons-material/FolderOpenTwoTone';
 import ArticleOutlinedIcon from '@mui/icons-material/ArticleOutlined';
 import TreeView from '~/components/Tree/TreeView';
 import TreeItem from '~/components/Tree/TreeItem';
+import { Box } from '@mui/material';
+import sx from './styles';
 
 interface IChannelTreeView {
   data: Array<{ [key: string]: any }>
@@ -54,7 +56,7 @@ const ChannelTreeView = ({ data }: IChannelTreeView) => {
     return items;
   }
 
-  const init = ()=> {
+  const init = () => {
     if (data?.length && networkItemIds.current?.length) {
       setExpandedItems(networkItemIds.current);
       setSelectedItems("channel-1");
@@ -68,20 +70,22 @@ const ChannelTreeView = ({ data }: IChannelTreeView) => {
   };
 
   const handleSelectedItemsChange = (event: React.SyntheticEvent, ids: string | null) => {
-    if(ids) {
+    if (ids) {
       setSelectedItems(ids);
     }
   };
 
   return (
-    <TreeView
-      expandedItems={expandedItems}
-      onExpandedItemsChange={handleExpandedItemsChange}
-      selectedItems={selectedItems}
-      onSelectedItemsChange={handleSelectedItemsChange}
-    >
-      {getNetworks()}
-    </TreeView>
+    <Box sx={sx.channelListContainer}>
+      <TreeView
+        expandedItems={expandedItems}
+        onExpandedItemsChange={handleExpandedItemsChange}
+        selectedItems={selectedItems}
+        onSelectedItemsChange={handleSelectedItemsChange}
+      >
+        {getNetworks()}
+      </TreeView>
+    </Box>
   );
 }
 

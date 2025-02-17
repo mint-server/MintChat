@@ -3,5 +3,18 @@
 }
 
 .main-layout .panel {
-  padding: 12px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: row;
+}
+
+.main-layout .left-panel {
+  padding-right: 0px;
+}
+
+.main-layout .overflow-content {
+  overflow: "auto";
+  display: flex;
+  flex-direction: row;
+  flex: 1;
 }

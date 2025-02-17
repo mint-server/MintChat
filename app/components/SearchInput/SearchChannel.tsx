@@ -2,17 +2,20 @@ import Paper from '@mui/material/Paper';
 import InputBase, { type InputBaseProps } from '@mui/material/InputBase';
 import IconButton from '@mui/material/IconButton';
 import SearchIcon from '@mui/icons-material/Search';
-import type { IconButtonProps } from '@mui/material';
+import type { IconButtonProps, SxProps, Theme } from '@mui/material';
 import sx from './styles';
 
 interface ISearchInput {
   textInputProps: InputBaseProps,
-  iconButtonProps: IconButtonProps
+  iconButtonProps: IconButtonProps,
+  sx?: SxProps<Theme>
 }
 
-const SearchInput = ({ textInputProps, iconButtonProps }: ISearchInput) => {
+const SearchInput = ({ textInputProps, iconButtonProps, sx: paperSx = {} }: ISearchInput) => {
+  const paperStyles = { ...sx.paperContainer, ...paperSx };
+
   return (
-    <Paper component="form" sx={sx.paperContainer} elevation={0}>
+    <Paper component="form" sx={paperStyles} elevation={0}>
 
       <InputBase
         size="small"
