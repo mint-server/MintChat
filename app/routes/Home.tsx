@@ -1,6 +1,5 @@
 import type { Route } from "./+types/Home";
 import ChannelSideBar from "~/features/ChannelList";
-import ChatPanel from "~/features/ChatPanel";
 import HomeLayout from "~/layouts/HomeLayout";
 
 export function meta({ }: Route.MetaArgs) {
