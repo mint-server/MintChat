@@ -3,8 +3,9 @@ import FolderOpenTwoToneIcon from '@mui/icons-material/FolderOpenTwoTone';
 import ArticleOutlinedIcon from '@mui/icons-material/ArticleOutlined';
 import TreeView from '~/components/Tree/TreeView';
 import TreeItem from '~/components/Tree/TreeItem';
-import { Box } from '@mui/material';
+import { Box, Typography } from '@mui/material';
 import sx from './styles';
+import DotIcon from '~/components/DotIcon';
 
 interface IChannelTreeView {
   data: Array<{ [key: string]: any }>
@@ -15,17 +16,44 @@ const ChannelTreeView = ({ data }: IChannelTreeView) => {
   const [expandedItems, setExpandedItems] = useState<string[]>([]);
   const [selectedItems, setSelectedItems] = useState<string>("");
 
+  const getInfoStatus = (channel: { [key: string]: any }) => {
+    if (channel?.unseenPings) {
+      return 1;
+    } else if (channel?.hasUnseenMsgs && !channel?.unseenPings) {
+      return 2;
+    }
+
+    return 0;
+  }
+
   const getChannels = (channels: Array<{ [key: string]: any }>, networkIndex: number) => {
     const items = channels.map((channel, index) => {
       const itemId = `channel-${networkIndex + index + 1}`;
+      const infoStatus = getInfoStatus(channel);
+
+      const infoCmp = (
+        <>
+          {infoStatus === 1 &&
+            <Typography variant="caption" color="inherit" className="info-chip">
+              {channel.unseenPings}
+            </Typography>
+          }
+
+          {infoStatus === 2 && <DotIcon />}
+        </>
+      );
 
       return (
         <TreeItem
           key={itemId}
           itemId={itemId}
-          label={channel.name}
+          label={channel?.name}
           labelIcon={ArticleOutlinedIcon}
-          labelInfo="90"
+          labelInfo={infoCmp}
+          customStatusClass={{
+            "has-unseen-msgs": channel?.hasUnseenMsgs,
+            "unseen-pings": channel?.unseenPings
+          }}
         />
       )
     })

@@ -16,7 +16,7 @@ const HomeLayout = ({ leftSidebar, rightSidebar, children }: IHomeLayout) => {
   return (
     <PanelGroup direction="horizontal" className="main-layout">
 
-      <Panel defaultSize={17} className="panel left-panel">
+      <Panel defaultSize={16} className="panel left-panel">
         <div className="overflow-content">
           {leftSidebar}
         </div>

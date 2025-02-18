@@ -15,8 +15,22 @@ const theme = createTheme({
       styleOverrides: {
         root: ({ theme }) => ({
           ".child-node .content.selected, .child-node .content.selected.focused": {
-            color: theme.palette.mode !== "dark" ? "#1a73e8" : "#b8e7fb",
-            backgroundColor: theme.palette.mode !== "dark" ? "#e8f0fe" : "#00b4ff"
+            color: theme.palette.mode !== "dark" ? "#ffffff" : "#b8e7fb",
+            backgroundColor: theme.palette.mode !== "dark" ? "#7c8eb7" : "#00b4ff",
+            fontWeight: 'bold'
+          },
+          ".child-node .content.has-unseen-msgs, .child-node .content.has-unseen-msgs.focused": {
+            fontWeight: 'bold'
+          },
+          ".child-node .content.unseen-pings, .child-node .content.unseen-pings.focused": {
+            fontWeight: 'bold'
+          },
+          ".child-node .content.unseen-pings .info-chip, .child-node .content.unseen-pings.focused .info-chip": {
+            padding: '0px 4px',
+            backgroundColor: '#e15050',
+            borderRadius: '1rem',
+            color: '#ffffff',
+            fontWeight: 'bold'
           }
         })
       }

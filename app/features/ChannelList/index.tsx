@@ -20,6 +20,8 @@ const ChannelList = () => {
       }]
     }, {
       name: "Channel 3",
+      hasUnseenMsgs: false,
+      unseenPings: 28,
       users: [{
         name: "Ramco"
       }]
@@ -28,6 +30,8 @@ const ChannelList = () => {
     name: "Network 2",
     channels: [{
       name: "Channel 1",
+      hasUnseenMsgs: true,
+      unseenPings: 0,
       users: [{
         name: "KN Nagar"
       }, {
