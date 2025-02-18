@@ -6,19 +6,19 @@ import sx from './styles';
 
 interface ITextInput {
   textInputProps?: InputBaseProps,
-  paperProps?: PaperProps,
+  containerProps?: PaperProps,
   iconButtonProps?: IconButtonProps,
   icon?: React.ReactElement
 }
 
 const TextInput = ({
   textInputProps = {},
-  paperProps = {},
+  containerProps = {},
   iconButtonProps = {},
   icon
 }: ITextInput) => {
 
-  const defaultPaperProps = {
+  const defaultContainerProps  = {
     component: "form",
     elevation: 0,
     sx: sx.paperContainer
@@ -34,12 +34,12 @@ const TextInput = ({
     sx: sx.textIcon
   }
 
-  const newPaperProps = {
-    ...defaultPaperProps,
-    ...paperProps,
+  const newContainerProps = {
+    ...defaultContainerProps,
+    ...containerProps,
     sx: {
-      ...(defaultPaperProps.sx || {}),
-      ...(paperProps.sx || {})
+      ...(defaultContainerProps.sx || {}),
+      ...(containerProps.sx || {})
     }
   }
 
@@ -62,7 +62,7 @@ const TextInput = ({
   }
 
   return (
-    <Paper {...newPaperProps}>
+    <Paper {...newContainerProps}>
       <InputBase {...newInputProps} />
 
       {icon &&

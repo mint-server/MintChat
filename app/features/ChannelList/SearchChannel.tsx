@@ -4,7 +4,7 @@ import SearchIcon from '@mui/icons-material/Search';
 import sx from "./styles";
 
 const SearchChannel = () => {
-  const paperProps: PaperProps = {
+  const containerProps: PaperProps = {
     sx: sx.channelSearchInput
   }
 
@@ -19,7 +19,7 @@ const SearchChannel = () => {
 
   return (
     <TextInput
-      paperProps={paperProps}
+      containerProps={containerProps}
       textInputProps={textInputProps}
       iconButtonProps={iconButtonProps}
       icon={<SearchIcon />}
