@@ -6,13 +6,13 @@ const sx = {
     backgroundColor: '#f1f1f1'
   },
 
-  searchIcon: {
-    p: 0.5
-  },
-
-  searchInput: {
+  textInput: {
     ml: 1,
     flex: 1
+  },
+
+  textIcon: {
+    p: 0.5
   }
 }
 

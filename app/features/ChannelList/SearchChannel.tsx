@@ -1,8 +1,13 @@
-import type { IconButtonProps, InputBaseProps } from "@mui/material";
-import SearchInput from "~/components/SearchInput/SearchChannel";
+import type { IconButtonProps, InputBaseProps, PaperProps } from "@mui/material";
+import TextInput from "~/components/TextInput";
+import SearchIcon from '@mui/icons-material/Search';
 import sx from "./styles";
 
 const SearchChannel = () => {
+  const paperProps: PaperProps = {
+    sx: sx.channelSearchInput
+  }
+
   const textInputProps: InputBaseProps = {
     placeholder: "Search Channel",
     inputProps: { "aria-label": "search channel" }
@@ -13,7 +18,12 @@ const SearchChannel = () => {
   }
 
   return (
-    <SearchInput textInputProps={textInputProps} iconButtonProps={iconButtonProps} sx={sx.channelSearchInput} />
+    <TextInput
+      paperProps={paperProps}
+      textInputProps={textInputProps}
+      iconButtonProps={iconButtonProps}
+      icon={<SearchIcon />}
+    />
   );
 }
 

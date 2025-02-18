@@ -1,5 +1,5 @@
 import { Box, Typography } from "@mui/material";
-import DotIcon from "~/components/DotIcon/DotIcon";
+import DotIcon from "~/components/DotIcon";
 import sx from "./styles";
 
 interface ITreeItemLabel {
