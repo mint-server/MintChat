@@ -1,0 +1,21 @@
+.main-layout .separator {
+  border-left: 1px solid #eee;
+}
+
+.main-layout .panel {
+  padding: 1rem;
+  display: flex;
+  flex-direction: row;
+}
+
+.main-layout .left-panel {
+  padding-right: 0px;
+  background-color: #e4e6eb;
+}
+
+.main-layout .overflow-content {
+  overflow: "auto";
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+}
