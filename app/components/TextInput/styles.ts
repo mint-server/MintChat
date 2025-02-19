@@ -1,9 +1,13 @@
 const sx = {
   paperContainer: {
-    pt: 0.5,
+    pt: 0.8,
     display: 'flex',
     alignItems: 'center',
-    backgroundColor: '#ffffff'
+    backgroundColor: '#ffffff',
+    borderRadius: '1rem',
+    pr: 1,
+    pl: 1,
+    pb: 0.3
   },
 
   textInput: {

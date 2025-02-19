@@ -3,14 +3,14 @@ import type { Theme } from "@mui/material"
 const sx = {
   treeItem2Root: (theme: Theme) => {
     return {
-      color: '#ffffffd4'
+      color: '#000000b5'
     }
   },
 
   treeItem2Content: (theme: Theme) => {
     return {
       marginBottom: theme.spacing(0.3),
-      color: '#ffffffd4',
+      color: '#000000b5',
       borderRadius: theme.spacing(2),
       paddingRight: theme.spacing(1),
       fontWeight: theme.typography.fontWeightMedium,
@@ -22,7 +22,7 @@ const sx = {
       },
       '&.focused, &.selected, &.selected.focused': {
         backgroundColor: `var(--tree-view-bg-color, ${theme.palette.action.selected})`,
-        color: '#ffffffd4',
+        color: '#000000b5',
       }
     }
   },
