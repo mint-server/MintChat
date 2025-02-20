@@ -1,8 +1,9 @@
+import React from "react";
 import { Box, Typography } from "@mui/material";
 import sx from "./styles";
 
 interface ITreeItemLabel {
-  icon: React.ElementType,
+  icon: React.ReactElement,
   info?: React.ReactElement,
   getLabelProps: any
 }
@@ -13,13 +14,19 @@ const TreeItemLabel = ({ icon, info, getLabelProps }: ITreeItemLabel) => {
     sx: sx.label
   });
 
+  const treeIcon = React.cloneElement(icon as React.ReactElement<any>, {
+    sx: {
+      ...sx.labelIcon
+    }
+  });
+
   return (
     <Box sx={sx.labelContainer}>
-      <Box component={icon} color="inherit" sx={sx.labelIcon} />
+      {treeIcon}
       <Typography {...labelProps} />
 
       {info &&
-        <Typography variant="caption" color="inherit" className="info-chip">
+        <Typography variant="caption" className="info-chip">
           {info}
         </Typography>
       }

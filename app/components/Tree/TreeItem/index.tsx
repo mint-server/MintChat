@@ -9,7 +9,7 @@ import sx from './styles';
 import clsx from 'clsx';
 
 interface ITreeItem extends Omit<UseTreeItem2Parameters, 'rootRef'>, React.HTMLAttributes<HTMLLIElement> {
-  labelIcon: React.ElementType;
+  icon: ReactElement;
   labelInfo?: ReactElement;
   customStatusClass?: { [key: string]: any };
 }
@@ -18,7 +18,7 @@ const TreeItem = React.forwardRef(function ChannelTreeItem(
   props: ITreeItem,
   ref: React.Ref<HTMLLIElement>
 ) {
-  const { id, itemId, label, disabled, children, labelIcon: LabelIcon, labelInfo, customStatusClass, ...other } = props;
+  const { id, itemId, label, disabled, children, icon, labelInfo, customStatusClass, ...other } = props;
   const theme = useTheme();
 
   const {
@@ -47,7 +47,7 @@ const TreeItem = React.forwardRef(function ChannelTreeItem(
             <TreeItem2Icon status={status} />
           </TreeItem2IconContainer>
 
-          <TreeItemLabel icon={LabelIcon} info={labelInfo} getLabelProps={getLabelProps} />
+          <TreeItemLabel icon={icon} info={labelInfo} getLabelProps={getLabelProps} />
 
         </TreeItem2Content>
         {children && (

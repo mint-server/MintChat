@@ -6,6 +6,7 @@ import TreeItem from '~/components/Tree/TreeItem';
 import { Box, Typography } from '@mui/material';
 import sx from './styles';
 import DotIcon from '~/components/DotIcon';
+import Icon from '~/components/Icon';
 
 interface IChannelTreeView {
   data: Array<{ [key: string]: any }>
@@ -43,12 +44,14 @@ const ChannelTreeView = ({ data }: IChannelTreeView) => {
         </>
       );
 
+      const iconCmp = <Icon icon={ArticleOutlinedIcon} className='child-node-icon' />;
+      
       return (
         <TreeItem
           key={itemId}
           itemId={itemId}
           label={channel?.name}
-          labelIcon={ArticleOutlinedIcon}
+          icon={iconCmp}
           labelInfo={infoCmp}
           customStatusClass={{
             "has-unseen-msgs": channel?.hasUnseenMsgs,
@@ -73,8 +76,10 @@ const ChannelTreeView = ({ data }: IChannelTreeView) => {
       const itemId = `network-${index + 1}`;
       tempNetworkItemIds = [...tempNetworkItemIds, itemId];
 
+      const iconCmp = <Icon icon={FolderOpenTwoToneIcon} className='parent-node-icon' />;
+
       return (
-        <TreeItem key={itemId} itemId={itemId} label={network.name} labelIcon={FolderOpenTwoToneIcon}>
+        <TreeItem key={itemId} itemId={itemId} label={network.name} icon={iconCmp}>
           {getChannels(network.channels, networkIndex)}
         </TreeItem>
       )

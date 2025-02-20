@@ -19,6 +19,9 @@ const theme = createTheme({
             backgroundColor: theme.palette.mode !== "dark" ? "#7c8eb7" : "#00b4ff",
             fontWeight: 'bold'
           },
+          ".child-node .content.selected .child-node-icon, .child-node .content.selected.focused .child-node-icon": {
+            color: "#ffffff",
+          },
           ".child-node .content.has-unseen-msgs, .child-node .content.has-unseen-msgs.focused": {
             fontWeight: 'bold'
           },
@@ -31,6 +34,12 @@ const theme = createTheme({
             borderRadius: '1rem',
             color: '#ffffff',
             fontWeight: 'bold'
+          },
+          ".parent-node-icon": {
+            color: "#7c8eb7"
+          },
+          ".child-node-icon": {
+            color: "#7c8eb7c7"
           }
         })
       }

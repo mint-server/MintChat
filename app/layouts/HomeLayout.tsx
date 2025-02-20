@@ -1,4 +1,4 @@
-import type { ReactNode } from "react";
+import type { ReactElement, ReactNode } from "react";
 import {
   Panel,
   PanelGroup,
@@ -7,8 +7,8 @@ import {
 import "./style.css";
 
 interface IHomeLayout {
-  leftSidebar: ReactNode,
-  rightSidebar: ReactNode,
+  leftSidebar: ReactElement,
+  rightSidebar: ReactElement,
   children: ReactNode
 }
 
@@ -16,7 +16,7 @@ const HomeLayout = ({ leftSidebar, rightSidebar, children }: IHomeLayout) => {
   return (
     <PanelGroup direction="horizontal" className="main-layout">
 
-      <Panel defaultSize={16} className="panel left-panel">
+      <Panel defaultSize={17} className="panel left-panel">
         <div className="overflow-content">
           {leftSidebar}
         </div>
@@ -30,7 +30,7 @@ const HomeLayout = ({ leftSidebar, rightSidebar, children }: IHomeLayout) => {
       </Panel>
 
       <PanelResizeHandle className="separator" />
-      <Panel defaultSize={15} className="panel">
+      <Panel defaultSize={16} className="panel">
         <div className="overflow-content">
           {rightSidebar}
         </div>
