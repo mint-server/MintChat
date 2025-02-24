@@ -1,5 +1,6 @@
 import type { Route } from "./+types/Home";
 import ChannelSideBar from "~/features/ChannelList";
+import ChatPanel from "~/features/ChatPanel";
 import HomeLayout from "~/layouts/HomeLayout";
 
 export function meta({ }: Route.MetaArgs) {
@@ -12,7 +13,7 @@ export function meta({ }: Route.MetaArgs) {
 const Home = () => {
   return (
     <HomeLayout leftSidebar={<ChannelSideBar />} rightSidebar={<div>Right</div>}>
-      <div>Center</div>
+      <ChatPanel />
     </ HomeLayout>
   );
 }

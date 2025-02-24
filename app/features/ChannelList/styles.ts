@@ -1,6 +1,6 @@
 const sx = {
     container: {
-        flex: 1
+        height: '100%'
     },
     channelListContainer: {
         overflow: 'auto',

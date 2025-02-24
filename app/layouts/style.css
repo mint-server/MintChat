@@ -4,8 +4,6 @@
 
 .main-layout .panel {
   padding: 1rem;
-  display: flex;
-  flex-direction: row;
 }
 
 .main-layout .left-panel {
@@ -14,8 +12,6 @@
 }
 
 .main-layout .overflow-content {
-  overflow: "auto";
-  display: flex;
-  flex-direction: row;
-  flex: 1;
+  height: 100%;
+  flex-direction: column;
 }
